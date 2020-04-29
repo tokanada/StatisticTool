@@ -1,4 +1,3 @@
-
 def class_boundary_calculator(lower_limit, upper_limit):
     return float((lower_limit + upper_limit) / 2)
 
