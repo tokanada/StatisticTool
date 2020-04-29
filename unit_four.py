@@ -11,7 +11,7 @@ def classic_probability():
 def main():
     while (True):
         print("1: Unit 4.1 Classic Probability Formula")
-        print("2: Unit 1.2: Data Classification")
+        print("2: Unit 4.2: Addition Rules for Probability")
         print("3: Unit 1.3: The Process of a Statistical Study")
         print("Other: Return")
         user_input = input("Enter a selection: ")
