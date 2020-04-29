@@ -2,6 +2,8 @@ from unit_one import main as main1
 from unit_two import main as main2
 from unit_three import main as main3
 from unit_four import main as main4
+from unit_five import main as main5
+
 
 while(True):
     print("1: Unit 1: Statistic Definitions")
@@ -26,7 +28,7 @@ while(True):
     elif user_input == str(4):
         main4()
     elif user_input == str(5):
-        print("Unit 5")
+        main5()
     elif user_input == str(6):
         print("Unit 6")
     elif user_input == str(7):
