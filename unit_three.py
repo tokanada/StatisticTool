@@ -85,11 +85,11 @@ def compute_weighted_mean():
     data_list = []
     weighted_list = []
     while (True):
-        user_input = input("Enter in data value (numbers only): ")
-        data_list.append(float(user_input))
-        user_input = input("Enter in data weight, q to stop: ")
+        user_input = input("Enter in data value (numbers only)  q to stop: ")
         if user_input.lower() == 'q':
             break
+        data_list.append(float(user_input))
+        user_input = input("Enter in data weight: ")
         weighted_list.append(float(user_input))
     print()
     print("=========================")
