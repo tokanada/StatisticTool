@@ -99,12 +99,24 @@ def unit21():
         if user_input == str(1):
             frequency_distribution_maker()
         elif user_input == str(2):
-            lower_limit = float(input("Enter Upperbound of Previous Class: "))
-            upper_limit = float(input("Enter Lowerbound of Given Class: "))
-            print("=================")
-            print("Class Boundary:",str(class_boundary_calculator(lower_limit, upper_limit)))
-            print("=================")
-            print()
+
+            temp_input = input("Are you searching for the upperbound or the lowerbound?: ")
+
+            if temp_input.lower() == str("lowerbound"):
+                lower_limit = float(input("Enter Upperbound of Previous Class: "))
+                upper_limit = float(input("Enter Lowerbound of Given Class: "))
+                print("=================")
+                print("Class Boundary:", str(class_boundary_calculator(lower_limit, upper_limit)))
+                print("=================")
+                print()
+            elif temp_input.lower() == str("upperbound"):
+                lower_limit = float(input("Enter Upperbound of Given Class: "))
+                upper_limit = float(input("Enter Lowerbound of Next Class: "))
+                print("=================")
+                print("Class Boundary:", str(class_boundary_calculator(lower_limit, upper_limit)))
+                print("=================")
+                print()
+
         elif user_input == str(3):
             lower_limit = float(input("Enter Lower Limit: "))
             upper_limit = float(input("Enter Upper Limit: "))
