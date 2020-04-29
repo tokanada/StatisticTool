@@ -42,7 +42,7 @@ def frequency_distribution_maker():
         if user_input.lower() == "ones" or user_input.lower() == "one":
             subtract_value = 1
             break
-        elif user_input.lower() == "hundredth" or user_input.lower() == "hundreths":
+        elif user_input.lower() == "hundredth" or user_input.lower() == "hundredths":
             subtract_value = 0.01
             break
         elif user_input.lower() == "tenth" or user_input.lower() == "tenths":
@@ -98,11 +98,18 @@ def unit21():
         user_input = input("Select an option: ")
         if user_input == str(1):
             frequency_distribution_maker()
-        elif user_input == str(2) or user_input == str(3):
+        elif user_input == str(2):
+            lower_limit = float(input("Enter Upperbound of Previous Class: "))
+            upper_limit = float(input("Enter Lowerbound of Given Class: "))
+            print("=================")
+            print("Class Boundary:",str(class_boundary_calculator(lower_limit, upper_limit)))
+            print("=================")
+            print()
+        elif user_input == str(3):
             lower_limit = float(input("Enter Lower Limit: "))
             upper_limit = float(input("Enter Upper Limit: "))
             print("=================")
-            print("Class Boundary/Midpoint:",str(class_boundary_calculator(lower_limit, upper_limit)))
+            print("Midpoint:", str(class_boundary_calculator(lower_limit, upper_limit)))
             print("=================")
             print()
         elif user_input == str(4):
