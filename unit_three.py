@@ -12,10 +12,10 @@ def compute_mode(numbers):
         counts[number] += 1
         if counts[number] > maxcount:
             maxcount = counts[number]
-
-    for number, count in counts.items():
-        if count == maxcount:
-            list.append([number, count])
+    if maxcount > 1:
+        for number, count in counts.items():
+            if count == maxcount:
+                list.append([number, count])
 
     return list
 
