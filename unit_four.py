@@ -123,9 +123,45 @@ def compute_fundamental_prob():
 
 
 def compute_factorial():
-    print()
-    print("Just use your computer's calculator")
-    print()
+    factorialIntStorage = []
+    multiFactorialAns = 1
+
+    print("1: Standalone ex: 2!")
+    print("2: Multiplication ex: 2! * 3!")
+    print("3: Division ex: 2!/3!")
+    print("4: Combination ex: 2!/(4-3)!")
+    userInput = input("Enter: ")
+
+    if userInput == str(1):
+        standAloneInput = input("Enter the integer value: ")
+        standAloneAns = factorial(float(standAloneInput))
+        print()
+        print(standAloneAns)
+        print()
+    elif userInput == str(2):
+        token = True
+        while(token):
+            multiInput = input("Enter the integer value, or type 'q' to continue: ")
+            if multiInput == str("q"):
+                token = False
+            else:
+                factorialIntStorage.append(float(multiInput))
+        for x in range(0, len(factorialIntStorage)):
+            multiFactorialAns *= factorial(factorialIntStorage[x])
+        print()
+        print(multiFactorialAns)
+        print()
+    elif userInput == str(3):
+        divisionInputTempX = input("Enter the numerator as an integer: ")
+        divisionInputTempY = input("Enter the denominator as an integer: ")
+
+        divisionFactorialAns = factorial(float(divisionInputTempX))/factorial(float(divisionInputTempY))
+
+        print()
+        print(divisionFactorialAns)
+        print()
+    elif userInput == str("4"):
+        print("Simplify any parentheses before entering the integer values")
 
 def compute_combinations(n, r):
     return (factorial(n)) / (factorial(r) * factorial(n - r))
