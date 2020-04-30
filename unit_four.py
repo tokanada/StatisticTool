@@ -129,7 +129,7 @@ def compute_factorial():
     print("1: Standalone ex: 2!")
     print("2: Multiplication ex: 2! * 3!")
     print("3: Division ex: 2!/3!")
-    print("4: Combination ex: 2!/(4-3)!")
+    #print("4: Combination ex: 2!/(4-3)!")
     userInput = input("Enter: ")
 
     if userInput == str(1):
@@ -160,8 +160,8 @@ def compute_factorial():
         print()
         print(divisionFactorialAns)
         print()
-    elif userInput == str("4"):
-        print("Simplify any parentheses before entering the integer values")
+    #elif userInput == str("4"):
+     #   print("Simplify any parentheses before entering the integer values")
 
 def compute_combinations(n, r):
     return (factorial(n)) / (factorial(r) * factorial(n - r))

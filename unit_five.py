@@ -33,6 +33,8 @@ def expectedValue():
     if userInput.lower() == str("y"):
         tempInput = input("How many trials?: ")
         earningsOrLosses = float(tempInput) * eValue
+    elif userInput.lower() == str("n"):
+        pass
 
     print()
     print("=================")
