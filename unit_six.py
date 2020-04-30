@@ -83,11 +83,51 @@ def areaTwoTail():
         print("=================")
         print()
 
-def spittinFacts():
+def spittinFactsP1():
     print()
     print("Find the Z-Score, then check the table."
           "\nIf the problem asks to for an answer that 'Differs by Less', it's asking for the area between."
           "\nIf it's asking for an answer that 'Differs by More', it's asking for the area of two tails combined.")
+    print()
+
+def spittinFactsP2():
+    print("Are you searching for x?: Y/N")
+    userInput = input("Enter: ")
+
+    if userInput.lower() == str("n"):
+        print()
+        print("Take the given area and compare it to 0.5, if the given area"
+              "\n is greater than 0.5 then the z-score will be positive."
+              "\nIf it's less than, then the z-score will be negative.")
+        print(
+            "If the question is about percentiles, find the closest area in the table and use its z-score as the answer.")
+        print(
+            "If the question is looking for the z-score of the area between two points that are the same but with differing signs"
+            "\n(ie: 2 and -2), take the total area given and subtract it from 1."
+            "\nThen divide the result by 2. After that, go into the table and find 2 areas that are close to the result."
+            "\nTake the z-score that is the halfway mark between the 2 z-scores of the 2 areas as your answer."
+            "\n This is literally the same as two-tails")
+        print()
+    elif userInput.lower() == str("y"):
+        xFinder()
+
+def xFinder():
+    x = 0
+    tempInput = input("Enter in the z-score: ")
+    z = float(tempInput)
+
+    tempInput = input("Enter in the mean: ")
+    mean = float(tempInput)
+
+    tempInput = input("Enter in the standard deviation: ")
+    sigma = float(tempInput)
+
+    x = (z * sigma) + mean
+
+    print()
+    print("=================")
+    print("The random variable (or x) is: " + str(x))
+    print("=================")
     print()
 
 def main():
@@ -95,7 +135,7 @@ def main():
         print("1: Unit 6.1: Normal Distribution (Normalize Z-Scores)")
         print("2: Unit 6.2: Finding the Area Under the Curve")
         print("3: Unit 6.3: Finding Probability Using a Normal Distribution")
-        print("4: Unit 6.4: ")
+        print("4: Unit 6.4: Finding Values of a Normally Distributed Random Variable (Also contains Percentiles)")
         print("Other: Return")
         user_input = input("Enter a selection: ")
 
@@ -104,6 +144,8 @@ def main():
         elif user_input == str(2):
             areaUnderCurve()
         elif user_input == str(3):
-            spittinFacts()
+            spittinFactsP1()
+        elif user_input == str(4):
+            spittinFactsP2()
         else:
             break
