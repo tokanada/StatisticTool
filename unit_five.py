@@ -5,6 +5,7 @@ def expectedValue():
     xValue = []
     pOfX = []
     eValue = 0
+    earningsOrLosses = 0
 
     token = True
 
@@ -28,11 +29,18 @@ def expectedValue():
     for x in range(0, len(xValue)):
         eValue += xValue[x] * pOfX[x]
 
+    userInput = input("Would you like to check for the expected payoff/losses?: Y/N")
+    if userInput.lower() == str("y"):
+        tempInput = input("How many trials?: ")
+        earningsOrLosses = float(tempInput) * eValue
+
     print()
     print("=================")
     print("Expected Value: " + str(eValue))
+    print("Earnings or Losses: " + str(earningsOrLosses))
     print("=================")
     print()
+
 
 def binomialDistribution():
     userInput = input("Enter the number of trials (n): ")
