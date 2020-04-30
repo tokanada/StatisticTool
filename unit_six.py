@@ -12,6 +12,12 @@ def zScoreCal():
     temp = x - mean
     zScore = temp/stanDev
 
+    print()
+    print("=================")
+    print("The Z-Score is: " + str(zScore))
+    print("=================")
+    print()
+
 def areaUnderCurve():
 
     print("1: Area under the curve (help on how to find, table is provided on Hawkes)")
@@ -79,7 +85,9 @@ def areaTwoTail():
 
 def spittinFacts():
     print()
-    print("")
+    print("Find the Z-Score, then check the table."
+          "\nIf the problem asks to for an answer that 'Differs by Less', it's asking for the area between."
+          "\nIf it's asking for an answer that 'Differs by More', it's asking for the area of two tails combined.")
     print()
 
 def main():
@@ -87,6 +95,7 @@ def main():
         print("1: Unit 6.1: Normal Distribution (Normalize Z-Scores)")
         print("2: Unit 6.2: Finding the Area Under the Curve")
         print("3: Unit 6.3: Finding Probability Using a Normal Distribution")
+        print("4: Unit 6.4: ")
         print("Other: Return")
         user_input = input("Enter a selection: ")
 
@@ -95,6 +104,6 @@ def main():
         elif user_input == str(2):
             areaUnderCurve()
         elif user_input == str(3):
-
+            spittinFacts()
         else:
             break
