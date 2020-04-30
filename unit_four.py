@@ -1,4 +1,5 @@
 import numpy as np
+from math import factorial
 
 def classic_probability():
     number_outcomes = float(input("Enter Number of Outcomes that the expected event will occur: "))
@@ -89,6 +90,50 @@ def compute_conditional_rule():
     print()
 
 
+def compute_fundamental():
+    data_set = []
+    while(True):
+        user_input = input("Enter in possibilities one at a time (Enter q to stop): ")
+        if user_input == 'q':
+            break
+        data_set.append(float(user_input))
+    print("Dataset:",data_set)
+    print()
+    print("============================")
+    print("Possible ways =", np.prod(data_set))
+    print("============================")
+    print()
+
+
+def compute_fundamental_prob():
+    data_set = []
+    while (True):
+        user_input = input("Enter in possibilities one at a time (Enter q to stop): ")
+        if user_input == 'q':
+            break
+        data_set.append(float(user_input))
+    print("Dataset:", data_set)
+    user_input = float(input("Enter number of ways given event will occur: "))
+    probability = user_input / np.prod(data_set)
+    print()
+    print("========================")
+    print("Probability =", probability)
+    print("========================")
+    print()
+
+
+def compute_factorial():
+    print()
+    print("Just use your computer's calculator")
+    print()
+
+def compute_combinations(n, r):
+    return (factorial(n)) / (factorial(r) * factorial(n - r))
+
+
+def compute_permutations(n, r):
+    return (factorial(n)) / (factorial(n - r))
+
 def main():
     while (True):
         print("1: Unit 4.1 Classic Probability Formula")
@@ -96,6 +141,12 @@ def main():
         print("3: Unit 4.2: Complement Rule")
         print("4: Unit 4.3: Multiplication Rules for Probability")
         print("5: Unit 4.3: Multiplication Rules for Dependent Events (Conditional probability)")
+        print("6: Unit 4.3: Fundamental Counting Principle")
+        print("7: Unit 4.3: Fundamental Counting Principle to calculate Probability")
+        print("8: Unit 4.4: Factorial Calculator")
+        print("9: Unit 4.4: Combinations Calculator (Order doesn't matter)")
+        print("10: Unit 4.4: Permutations Calculator (Order matters)")
+        print("11: Unit 4.4: nPr/nCr Probability Calculator")
         print("Other: Return")
         user_input = input("Enter a selection: ")
 
@@ -109,5 +160,44 @@ def main():
             compute_multiplication_rule()
         elif user_input == str(5):
             compute_conditional_rule()
+        elif user_input == str(6):
+            compute_fundamental()
+        elif user_input == str(7):
+            compute_fundamental_prob()
+        elif user_input == str(8):
+            compute_factorial()
+        elif user_input == str(9):
+            n = float(input("Enter in n value (Group size)(nCr): "))
+            r = float(input("Enter in r value (Number being arranged)(nCr): "))
+            combination = compute_combinations(n, r)
+            print()
+            print("=============================")
+            print(f"{n}C{r} = {combination}")
+            print("=============================")
+            print()
+        elif user_input == str(10):
+            n = float(input("Enter in n value (Group Size)(nPr): "))
+            r = float(input("Enter in r value (Number being arranged)(nPr): "))
+            permuation = compute_permutations(n, r)
+            print()
+            print("=============================")
+            print(f"{n}P{r} = {permuation}")
+            print("=============================")
+            print()
+        elif user_input == str(11):
+            user_input = input("Enter 'c' for combination | Enter 'p' for permutation")
+            if user_input == 'c':
+                user_input = input("Do you know the combination? y/n: ")
+                if user_input == 'y':
+                    combination = float(input("What is the combination: "))
+                    outcomes = float(input("What is the number of outcomes for the given event: "))
+                else:
+                    n = float(input("Enter in n value (group size)(nCr): "))
+                    r = float(input("Enter in r value (number being arranged)(nCr)"))
+                    combination = compute_combinations(n, r)
+
+            elif user_input == 'p':
+                pass
+
         else:
             break
