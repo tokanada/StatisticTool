@@ -9,7 +9,7 @@ while(True):
     print("1: Unit 1: Statistic Definitions")
     print("2: Unit 2: Graphs and Distributions")
     print("3: Unit 3: Mean, Median, Mode, Standard Deviation, Chebyshev, Graph Distribution, Z-score, Percentiles.")
-    print("4: Unit 4: Probability")
+    print("4: Unit 4: Probability & Factorials & C & P")
     print("5: Unit 5: Binomial Distribution & Discrete Random Variables")
     print("6: Unit 6: Normal Distribution")
     print("7: Unit 7: Central Limit Theorem")
