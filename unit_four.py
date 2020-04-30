@@ -170,6 +170,53 @@ def compute_combinations(n, r):
 def compute_permutations(n, r):
     return (factorial(n)) / (factorial(n - r))
 
+def is_integer(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+
+def compute_special_permutations_word(n):
+    k_values = [n.count(i) for i in set(n)]
+    print(k_values)
+    n = len(n)
+    print(n)
+    return k_values, n
+
+def compute_special_permutations():
+    print()
+    print("****************************************")
+    print("Special Permutations involve objects that are identical. The number of distinguishable permutations of k1-kp objects are all alike, is given by:")
+    print("(n!)/(k1! *k2! *...* kp!)")
+    print("Where k1 + k2 + ... + kp = n")
+    print("Example: How many arrangement of letters in TENNESSEE | T=1 (k1=1), E=4 (k2=4), etc.")
+    print("****************************************")
+    print()
+    n = input("Enter n value(Length) or word to be rearrranged: ")
+    data_list = []
+    if not is_integer(n):
+        data_list, n = compute_special_permutations_word(n.lower())
+    else:
+        count = 1
+        while(True):
+            user_input = input("Enter in k" + str(count) + " value (q to stop): ")
+            count += 1
+            if user_input == 'q':
+                break
+            data_list.append(float(user_input))
+        print("K values =", data_list)
+    bottom_value = 1
+    for k in data_list:
+        bottom_value *= factorial(k)
+    permutation = factorial(n) / bottom_value
+    print()
+    print("====================================")
+    print("Special Permutation =", permutation)
+    print("====================================")
+    print()
+
 def main():
     while (True):
         print("1: Unit 4.1 Classic Probability Formula")
@@ -183,6 +230,7 @@ def main():
         print("9: Unit 4.4: Combinations Calculator (Order doesn't matter)")
         print("10: Unit 4.4: Permutations Calculator (Order matters)")
         print("11: Unit 4.4: nPr/nCr Probability Calculator")
+        print("12: Unit 4.4: Special Permutations")
         print("Other: Return")
         user_input = input("Enter a selection: ")
 
@@ -221,19 +269,35 @@ def main():
             print("=============================")
             print()
         elif user_input == str(11):
-            user_input = input("Enter 'c' for combination | Enter 'p' for permutation")
+            user_input = input("Enter 'c' for combination | Enter 'p' for permutation: ")
             if user_input == 'c':
                 user_input = input("Do you know the combination? y/n: ")
                 if user_input == 'y':
-                    combination = float(input("What is the combination: "))
-                    outcomes = float(input("What is the number of outcomes for the given event: "))
+                    bottom_value = float(input("What is the combination: "))
+
                 else:
                     n = float(input("Enter in n value (group size)(nCr): "))
-                    r = float(input("Enter in r value (number being arranged)(nCr)"))
-                    combination = compute_combinations(n, r)
-
+                    r = float(input("Enter in r value (number being arranged)(nCr): "))
+                    bottom_value = compute_combinations(n, r)
             elif user_input == 'p':
-                pass
-
+                user_input = input("Do you know the permutation? y/n: ")
+                if user_input == 'y':
+                    bottom_value = float(input("What is the permutation: "))
+                else:
+                    n = float(input("Enter in n value (group size)(nPr): "))
+                    r = float(input("Enter in r value (number being arranged)(nPr): "))
+                    bottom_value = compute_permutations(n, r)
+            else:
+                print("Invalid Entry")
+                return
+            outcomes = float(input("What is the number of outcomes for the given event: "))
+            probability = outcomes / bottom_value
+            print()
+            print("========================")
+            print("Probability =", probability)
+            print("========================")
+            print()
+        elif user_input == str(12):
+            compute_special_permutations()
         else:
             break
