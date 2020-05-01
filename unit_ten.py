@@ -235,12 +235,12 @@ def compute_test_statistic_proportion():
     user_input = input("Do you know the sample proportion (p)? (y/n): ")
     if user_input == 'y':
         sp_proportion = float(input("Enter sample proportion (decimal): "))
-    elif user_input == 'n':
+    else:
         sp_proportion = compute_point_estimate_proportion()
     user_input = input("Do you know the claimed proportion)? (y/n): ")
     if user_input == 'y':
         pop_proportion = float(input("Enter claimed proportion (decimal): "))
-    elif user_input == 'n':
+    else:
         pop_proportion = compute_point_estimate_proportion()
     n = int(input("Enter sample size (n): "))
     pass_test = test_proportion_values(pop_proportion, n)
@@ -448,6 +448,11 @@ def compute_pvalue():
     u_input = input("Single or Two-Tails? (1, 2)")
     if u_input == '2':
         p *= 2
+    print()
+    print("++++++++++")
+    print("P Value =", p)
+    print("++++++++++")
+    print()
     return p
 
 
