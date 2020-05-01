@@ -1,11 +1,12 @@
 # StatisticTool
-Isn't this nice
+A Python-based Statistics Tool with an Interface that could bring every designer to tears
 
 # Dependencies
 * PIP
 * NumPy
 * SciPy
 * Python 3.7+
+* Frac
 
 # Installation Instructions
 * Clone Repository
