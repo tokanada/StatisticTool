@@ -5,6 +5,7 @@ from unit_four import main as main4
 from unit_five import main as main5
 from unit_six import main as main6
 from unit_seven import main as main7
+from unit_eight import main as main8
 
 
 while(True):
@@ -37,7 +38,7 @@ while(True):
     elif user_input == str(7):
         main7()
     elif user_input == str(8):
-        print("Unit 8")
+        main8()
     elif user_input == str(10):
         print("Unit 10")
     elif user_input == str(12):
