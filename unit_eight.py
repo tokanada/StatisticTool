@@ -277,7 +277,8 @@ def main():
         print()
         print("1: Unit 8.1: About Using Standard Normal Distribution to Estimate Population Mean")
         print("2: Unit 8.1: Finding point estimate (mean)")
-        print("3: Unit 8.1: Find E (Margin of Error) with sigma known")
+        print("3: "
+              "Unit 8.1: Find E (Margin of Error) with sigma known")
         print("\033[1m4: Unit 8: Find Confidence Interval with Margin of Error\033[0m")
         print("5: Unit 8.1: Find Z critical score (Z(a/2))")
         print("6: Unit 8.1: Interpreting a Confidence interval")
