@@ -4,9 +4,11 @@ from unit_three import main as main3
 from unit_four import main as main4
 from unit_five import main as main5
 from unit_six import main as main6
+from unit_seven import main as main7
 
 
 while(True):
+    print()
     print("1: Unit 1: Statistic Definitions")
     print("2: Unit 2: Graphs and Distributions")
     print("3: Unit 3: Mean, Median, Mode, Standard Deviation, Chebyshev, Graph Distribution, Z-score, Percentiles.")
@@ -33,7 +35,7 @@ while(True):
     elif user_input == str(6):
         main6()
     elif user_input == str(7):
-        print("Unit 7")
+        main7()
     elif user_input == str(8):
         print("Unit 8")
     elif user_input == str(10):
@@ -41,5 +43,5 @@ while(True):
     elif user_input == str(12):
         print("Unit 12")
     else:
-        print("Quiting")
+        print("Goodbye o7")
         break
