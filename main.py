@@ -43,7 +43,12 @@ while(True):
     elif user_input == str(10):
         main10()
     elif user_input == str(12):
-        print("Unit 12")
+        print()
+        print("*******************")
+        print("There will legit be nothing on Unit 12")
+        print("Scatter and Plot")
+        print("*******************")
+        print()
     else:
         print("Goodbye o7")
         break
